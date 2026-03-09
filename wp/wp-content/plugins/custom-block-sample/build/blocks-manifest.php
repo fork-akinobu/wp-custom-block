@@ -7,9 +7,8 @@ return array(
 		'name' => 'create-block/custom-block-sample',
 		'version' => '0.1.0',
 		'title' => 'Custom Block Sample',
-		'category' => 'widgets',
-		'icon' => 'smiley',
-		'description' => 'Example block scaffolded with Create Block tool.',
+		'category' => 'design',
+		'description' => 'カスタムブロックです',
 		'example' => array(
 			
 		),
