@@ -7,8 +7,24 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-create-block-custom-block-sample {
-  background-color: #21759b;
-  color: #fff;
+.wp-block-fk-create-block-custom-block-sample {
   padding: 2px;
+}
+.wp-block-fk-create-block-custom-block-sample .u-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.wp-block-fk-create-block-custom-block-sample .u-inner::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.wp-block-fk-create-block-custom-block-sample .u-relative {
+  position: relative;
+  background: #cceecc;
+  padding: 20px;
+}
+.wp-block-fk-create-block-custom-block-sample .u-relative img,
+.wp-block-fk-create-block-custom-block-sample .u-relative .right-image {
+  float: left;
 }

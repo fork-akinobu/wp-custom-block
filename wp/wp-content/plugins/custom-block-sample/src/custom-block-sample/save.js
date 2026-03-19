@@ -15,10 +15,15 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
-export default function save() {
-	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Custom Block Sample – hello from the saved content!' }
-		</p>
-	);
+export default function Save( { attributes } ) {
+    const { imageUrl, imageAlt } = attributes;
+    const blockProps = useBlockProps.save();
+
+    return (
+        <div { ...blockProps }>
+			<div class="u-inner u-relative">
+            	{ imageUrl && <img src={ imageUrl } alt={ imageAlt } /> }
+			</div>
+        </div>
+    );
 }

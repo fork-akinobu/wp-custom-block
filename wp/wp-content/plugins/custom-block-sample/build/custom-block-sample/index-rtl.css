@@ -6,6 +6,10 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-create-block-custom-block-sample {
+.wp-block-fk-create-block-custom-block-sample {
   border: 1px dotted #f00;
+}
+.wp-block-fk-create-block-custom-block-sample img {
+  max-width: unset !important;
+  float: left;
 }

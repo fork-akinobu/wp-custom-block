@@ -1,14 +1,37 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "create-block/custom-block-sample",
+	"name": "fk-create-block/custom-block-sample",
 	"version": "0.1.0",
 	"title": "Custom Block Sample",
 	"category": "design",
-	"description": "カスタムブロックです",
+	"description": "サンプルカスタムブロックです",
 	"example": {},
 	"supports": {
-		"html": false
+		"html": false,
+		"color": {
+			"text": true,
+			"background": true,
+			"link": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true
+		}
+	},
+	"attributes": {
+		"imageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"imageAlt": {
+			"type": "string",
+			"default": ""
+		}
 	},
 	"textdomain": "custom-block-sample",
 	"editorScript": "file:./index.js",

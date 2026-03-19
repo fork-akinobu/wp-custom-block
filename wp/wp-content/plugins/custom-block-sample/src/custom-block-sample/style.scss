@@ -5,8 +5,30 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-custom-block-sample {
-	background-color: #21759b;
-	color: #fff;
+.wp-block-fk-create-block-custom-block-sample {
+	// background-color: #21759b;
+	// color: #fff;
 	padding: 2px;
+
+	.u-inner {
+		max-width: 1000px;
+		margin: 0 auto;
+
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+	}
+
+	.u-relative {
+		position: relative;
+		background: #cceecc;
+		padding: 20px;
+
+		img,
+		.right-image {
+			float: right;
+		}
+	}
 }
