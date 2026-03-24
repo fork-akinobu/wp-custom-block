@@ -12,7 +12,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { MediaUploadCheck, MediaUpload, useBlockProps } from '@wordpress/block-editor';
-import { Button } from '@wordpress/components';
+import { Button, RadioControl } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -31,7 +31,7 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit( { attributes, setAttributes } ) {
-    const { imageUrl, imageAlt } = attributes;
+    const { imageUrl, imageAlt, imageAlign } = attributes;
     const blockProps = useBlockProps();
 
     return (
@@ -45,7 +45,7 @@ export default function Edit( { attributes, setAttributes } ) {
                     allowedTypes={ [ 'image' ] }
                     value={ imageUrl }
                     render={ ( { open } ) => (
-                        <div>
+                        <div className={ `u-relative u-image-${imageAlign}` }>
                             { imageUrl ? (
                                 <>
                                     <img src={ imageUrl } alt={ imageAlt } style={{ maxWidth: '100%' }} />
@@ -62,6 +62,18 @@ export default function Edit( { attributes, setAttributes } ) {
                     ) }
                 />
             </MediaUploadCheck>
+
+            <br />
+
+            <RadioControl
+                label="画像の位置"
+                selected={ imageAlign }
+                options={ [
+                    { label: '右', value: 'right' },
+                    { label: '左', value: 'left' },
+                ] }
+                onChange={ ( value ) => setAttributes({ imageAlign: value }) }
+            />
         </div>
     );
 }

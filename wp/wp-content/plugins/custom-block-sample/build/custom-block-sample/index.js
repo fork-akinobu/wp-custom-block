@@ -60,12 +60,13 @@ function Edit({
 }) {
   const {
     imageUrl,
-    imageAlt
+    imageAlt,
+    imageAlign
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     ...blockProps,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUploadCheck, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUploadCheck, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
         onSelect: media => setAttributes({
           imageUrl: media.url,
@@ -76,6 +77,7 @@ function Edit({
         render: ({
           open
         }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: `u-relative u-image-${imageAlign}`,
           children: imageUrl ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
               src: imageUrl,
@@ -95,7 +97,20 @@ function Edit({
           })
         })
       })
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RadioControl, {
+      label: "\u753B\u50CF\u306E\u4F4D\u7F6E",
+      selected: imageAlign,
+      options: [{
+        label: '右',
+        value: 'right'
+      }, {
+        label: '左',
+        value: 'left'
+      }],
+      onChange: value => setAttributes({
+        imageAlign: value
+      })
+    })]
   });
 }
 
@@ -213,13 +228,14 @@ function Save({
 }) {
   const {
     imageUrl,
-    imageAlt
+    imageAlt,
+    imageAlign
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     ...blockProps,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      class: "u-inner u-relative",
+      className: `u-inner u-relative u-image-${imageAlign}`,
       children: imageUrl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
         src: imageUrl,
         alt: imageAlt
@@ -310,7 +326,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fk-create-block/custom-block-sample","version":"0.1.0","title":"Custom Block Sample","category":"design","description":"サンプルカスタムブロックです","example":{},"supports":{"html":false,"color":{"text":true,"background":true,"link":true},"typography":{"fontSize":true,"lineHeight":true},"spacing":{"padding":true,"margin":true}},"attributes":{"imageUrl":{"type":"string","default":""},"imageAlt":{"type":"string","default":""}},"textdomain":"custom-block-sample","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"fk-create-block/custom-block-sample","version":"0.1.0","title":"Custom Block Sample","category":"design","description":"サンプルカスタムブロックです","example":{},"supports":{"html":false,"color":{"text":true,"background":true,"link":true},"typography":{"fontSize":true,"lineHeight":true},"spacing":{"padding":true,"margin":true}},"attributes":{"imageUrl":{"type":"string","default":""},"imageAlt":{"type":"string","default":""},"imageAlign":{"type":"string","default":""}},"textdomain":"custom-block-sample","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }
 

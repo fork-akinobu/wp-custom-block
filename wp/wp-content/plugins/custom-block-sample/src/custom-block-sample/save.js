@@ -16,12 +16,12 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function Save( { attributes } ) {
-    const { imageUrl, imageAlt } = attributes;
+    const { imageUrl, imageAlt, imageAlign } = attributes;
     const blockProps = useBlockProps.save();
 
     return (
         <div { ...blockProps }>
-			<div class="u-inner u-relative">
+			<div className={ `u-inner u-relative u-image-${imageAlign}` }>
             	{ imageUrl && <img src={ imageUrl } alt={ imageAlt } /> }
 			</div>
         </div>

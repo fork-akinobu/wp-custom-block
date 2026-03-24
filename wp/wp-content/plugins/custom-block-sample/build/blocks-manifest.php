@@ -36,6 +36,10 @@ return array(
 			'imageAlt' => array(
 				'type' => 'string',
 				'default' => ''
+			),
+			'imageAlign' => array(
+				'type' => 'string',
+				'default' => ''
 			)
 		),
 		'textdomain' => 'custom-block-sample',
